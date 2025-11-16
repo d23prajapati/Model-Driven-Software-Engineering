@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<embeddedSystem:SystemModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:embeddedSystem="http://www.example.org/embeddedSystem" name="MyAurduinoModel">
+  <systemStructures name="MySystem">
+    <board name="AurduinoUno">
+      <pinGroups>
+        <pins pinNr="13" name="LED"/>
+      </pinGroups>
+    </board>
+    <components name="LED">
+      <pinGroups>
+        <pins name="IN"/>
+      </pinGroups>
+    </components>
+    <components name="Button">
+      <pinGroups>
+        <pins pinNr="2" name="Btn"/>
+      </pinGroups>
+    </components>
+    <connections src="//@systemStructures.0/@board/@pinGroups.0/@pins.0" target="//@systemStructures.0/@components.0/@pinGroups.0/@pins.0"/>
+  </systemStructures>
+</embeddedSystem:SystemModel>
