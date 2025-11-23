@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" name="project" version="12.0.0.2017041100">
-  <ownedViewpoints name="EmbeddedSystemViewpoint" modelFileExtension="*.embeddedsystem">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="project" version="12.0.0.2017041100">
+  <ownedViewpoints name="EmbeddedSystemViewpoint">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SystemStructureDiagram" domainClass="embeddedSystem::SystemStructure" enablePopupBars="true">
       <metamodel href="http://www.example.org/embeddedSystem#/"/>
-      <defaultLayer name="Default"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="ComponentNode" semanticCandidatesExpression="aql:self.components" domainClass="embeddedSystem::Component" reusedBorderedNodeMappings="//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']">
+          <borderedNodeMappings name="PinGroupBorderedNode" semanticCandidatesExpression="feature:eAllContents" domainClass="embeddedSystem::PinGroup">
+            <borderedNodeMappings name="PinBoardNode" semanticCandidatesExpression="feature:eAllContents" domainClass="embeddedSystem::Pin">
+              <style xsi:type="style:DotDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:''" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="BoardNode" domainClass="embeddedSystem::Board" reusedBorderedNodeMappings="//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.board" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/embeddedSystem.project.design/arduinoImages/images/arduino.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="WireEdge" semanticCandidatesExpression="aql:self.connections" sourceMapping="//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']/@borderedNodeMappings[name='PinBoardNode']" targetMapping="//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']/@borderedNodeMappings[name='PinBoardNode']" targetFinderExpression="aql:self.target" sourceFinderExpression="aql:self.src" domainClass="embeddedSystem::Connection" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="BoardContainer" domainClass="embeddedSystem::Board">
+          <conditionnalStyles predicateExpression="aql:self.type = embeddedSystem::PinType::VCC"/>
+        </containerMappings>
+      </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="embeddedSystem.project.design.Services"/>
   </ownedViewpoints>

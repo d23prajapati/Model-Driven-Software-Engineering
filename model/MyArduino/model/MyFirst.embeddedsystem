@@ -3,19 +3,17 @@
   <systemStructures name="MySystem">
     <board name="AurduinoUno">
       <pinGroups>
-        <pins pinNr="13" name="LED"/>
+        <pins name="0"/>
+        <pins pinNr="1" name="1"/>
       </pinGroups>
     </board>
     <components name="LED">
       <pinGroups>
         <pins name="IN"/>
+        <pins name="OUT"/>
       </pinGroups>
     </components>
-    <components name="Button">
-      <pinGroups>
-        <pins pinNr="2" name="Btn"/>
-      </pinGroups>
-    </components>
+    <components name="Button"/>
     <connections src="//@systemStructures.0/@board/@pinGroups.0/@pins.0" target="//@systemStructures.0/@components.0/@pinGroups.0/@pins.0"/>
   </systemStructures>
 </embeddedSystem:SystemModel>
