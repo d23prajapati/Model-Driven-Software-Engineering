@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="project" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="project" version="12.0.0.2017041100">
   <ownedViewpoints name="EmbeddedSystemViewpoint">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SystemStructureDiagram" domainClass="embeddedSystem::SystemStructure" enablePopupBars="true">
       <metamodel href="http://www.example.org/embeddedSystem#/"/>
@@ -26,7 +26,7 @@
           </style>
         </nodeMappings>
         <nodeMappings name="BoardNode" domainClass="embeddedSystem::Board" reusedBorderedNodeMappings="//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.board" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/embeddedSystem.project.design/arduinoImages/images/arduino.png">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.name" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/embeddedSystem.project.design/arduinoImages/images/arduino.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
@@ -39,9 +39,84 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="BoardContainer" domainClass="embeddedSystem::Board">
-          <conditionnalStyles predicateExpression="aql:self.type = embeddedSystem::PinType::VCC"/>
-        </containerMappings>
+        <toolSections name="embeddedSystemTools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Component" nodeMappings="//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="embeddedSystem::Component" referenceName="components">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'New Component'"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createPin" precondition="aql:container.oclIsKindOf(embeddedSystem::PinGroup) or container.oclIsKindOf(embeddedSystem::Component) or container.oclIsKindOf(embeddedSystem::Board)" nodeMappings="//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']/@borderedNodeMappings[name='PinBoardNode']" extraMappings="//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='BoardNode'] //@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:container.oclIsKindOf(embeddedSystem::PinGroup)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.oclAsType(embeddedSystem::PinGroup)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="embeddedSystem::Pin" referenceName="pins">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="pinNr" valueExpression="10"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="embeddedSystem::Pin" referenceName="pins">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="pinNr" valueExpression="10"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:container.oclIsKindOf(embeddedSystem::Board) or container.oclIsKindOf(embeddedSystem::Component)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="embeddedSystem::PinGroup" referenceName="pinGroups" variableName="groupInstance">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:groupInstance">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="embeddedSystem::Pin" referenceName="pins">
+                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:pinInstance">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="pinNr" valueExpression="10"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <default>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="embeddedSystem::Pin" referenceName="pins" variableName="pininstance">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="pinNr"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </default>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createWire" edgeMappings="//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@edgeMappings[name='WireEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.ancestors()->filter(embeddedSystem::SystemStructure)->first()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="embeddedSystem::Connection" referenceName="connections">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="src" valueExpression="var:source"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolDescription" name="do">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.oclAsType(embeddedSystem::Component).hello()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="embeddedSystem.project.design.Services"/>

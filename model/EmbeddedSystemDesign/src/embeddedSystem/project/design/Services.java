@@ -14,4 +14,10 @@ public class Services {
        // TODO Auto-generated code
       return self;
     }
+    
+    public embeddedSystem.Component hello(embeddedSystem.Component self) {
+        // TODO Auto-generated code
+    	System.out.println("Hello:" + self.getName());
+       return self;
+     }
 }
