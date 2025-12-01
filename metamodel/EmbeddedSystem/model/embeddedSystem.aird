@@ -5,7 +5,7 @@
     <semanticResources>embeddedSystem.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_5xa9sLrwEfC98aCw-oHq7A">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_5zZ6sLrwEfC98aCw-oHq7A" name="embeddedSystem" repPath="#_5yxokLrwEfC98aCw-oHq7A" changeId="1763913096642">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_5zZ6sLrwEfC98aCw-oHq7A" name="embeddedSystem" repPath="#_5yxokLrwEfC98aCw-oHq7A" changeId="1764577382487">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="embeddedSystem.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -59,6 +59,10 @@
             <children xmi:type="notation:Node" xmi:id="_tV0GsLryEfC98aCw-oHq7A" type="3010" element="_tVsK4LryEfC98aCw-oHq7A">
               <styles xmi:type="notation:FontStyle" xmi:id="_tV0GsbryEfC98aCw-oHq7A" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_tV0GsrryEfC98aCw-oHq7A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_1wXhEM6OEfCu_fFQyi4cqw" type="3010" element="_1uUSoM6OEfCu_fFQyi4cqw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_1wXhEc6OEfCu_fFQyi4cqw" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_1wXhEs6OEfCu_fFQyi4cqw"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_qF84crryEfC98aCw-oHq7A"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_qF84c7ryEfC98aCw-oHq7A"/>
@@ -358,6 +362,17 @@
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
           </endLabelStyleDescription>
         </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_1uWH0M6OEfCu_fFQyi4cqw" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_1vAPIM6OEfCu_fFQyi4cqw" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
+        </computedStyleDescriptions>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_hsKYcLrxEfC98aCw-oHq7A" name="SystemStructure" tooltipText="" outgoingEdges="_r8gxdrryEfC98aCw-oHq7A _05_CybryEfC98aCw-oHq7A _qSAlQrr3EfC98aCw-oHq7A" incomingEdges="_WbHFgLryEfC98aCw-oHq7A" width="12" height="10">
@@ -430,12 +445,10 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_qFygYLryEfC98aCw-oHq7A" name="Board" tooltipText="" outgoingEdges="_75gZoLryEfC98aCw-oHq7A" incomingEdges="_r8gxdrryEfC98aCw-oHq7A" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_qFygYLryEfC98aCw-oHq7A" name="Board" tooltipText="&#xA;ERROR : The required feature 'eAttributeType' of 'EAttribute{platform:/resource/EmbeddedSystem/model/embeddedSystem.ecore#//Board/serialSpeed}' must be set&#xA;ERROR : The typed element must have a type&#xA;ERROR : The default value literal '1100' must be a valid literal of the attribute's type" outgoingEdges="_75gZoLryEfC98aCw-oHq7A" incomingEdges="_r8gxdrryEfC98aCw-oHq7A" width="12" height="10">
       <target xmi:type="ecore:EClass" href="embeddedSystem.ecore#//Board"/>
       <semanticElements xmi:type="ecore:EClass" href="embeddedSystem.ecore#//Board"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_vACz57ryEfC98aCw-oHq7A" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
-      </ownedStyle>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_1vAPIs6OEfCu_fFQyi4cqw" labelColor="239,41,41" description="_1vAPIM6OEfCu_fFQyi4cqw" borderSize="1" borderSizeComputationExpression="1" borderColor="239,41,41" backgroundStyle="Liquid" foregroundColor="255,252,216"/>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_tVsK4LryEfC98aCw-oHq7A" name="name : EString" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="embeddedSystem.ecore#//Board/name"/>
@@ -443,6 +456,12 @@
         <ownedStyle xmi:type="diagram:BundledImage" uid="_vADa87ryEfC98aCw-oHq7A" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_1uUSoM6OEfCu_fFQyi4cqw" name="serialSpeed = 1100" tooltipText="&#xA;ERROR : The required feature 'eAttributeType' of 'EAttribute{platform:/resource/EmbeddedSystem/model/embeddedSystem.ecore#//Board/serialSpeed}' must be set&#xA;ERROR : The typed element must have a type&#xA;ERROR : The default value literal '1100' must be a valid literal of the attribute's type">
+        <target xmi:type="ecore:EAttribute" href="embeddedSystem.ecore#//Board/serialSpeed"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="embeddedSystem.ecore#//Board/serialSpeed"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_1uWu4M6OEfCu_fFQyi4cqw" labelColor="239,41,41" labelAlignment="LEFT" description="_1uWH0M6OEfCu_fFQyi4cqw" borderColor="239,41,41"/>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>

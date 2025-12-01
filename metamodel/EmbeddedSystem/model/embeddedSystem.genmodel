@@ -41,6 +41,7 @@
     <genClasses ecoreClass="embeddedSystem.ecore#//Board">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embeddedSystem.ecore#//Board/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference embeddedSystem.ecore#//Board/pinGroups"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embeddedSystem.ecore#//Board/serialSpeed"/>
     </genClasses>
     <genClasses ecoreClass="embeddedSystem.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embeddedSystem.ecore#//Component/name"/>

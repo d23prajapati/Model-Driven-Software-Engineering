@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <embeddedSystem:SystemModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:embeddedSystem="http://www.example.org/embeddedSystem" name="MyAurduinoModel">
   <systemStructures name="MySystem">
-    <board name="AurduinoUno">
+    <board name="AurduinoUno3">
       <pinGroups>
         <pins name="0"/>
-        <pins pinNr="1" name="1"/>
+        <pins pinNr="1" name="1" type="VCC"/>
       </pinGroups>
     </board>
     <components name="LED">
       <pinGroups>
         <pins name="IN"/>
-        <pins name="OUT"/>
+        <pins name="OUT" type="VCC"/>
       </pinGroups>
     </components>
-    <components name="Button"/>
-    <components name="New Component"/>
-    <connections src="//@systemStructures.0/@board/@pinGroups.0/@pins.0" target="//@systemStructures.0/@components.0/@pinGroups.0/@pins.0"/>
+    <components name="Button2">
+      <pinGroups>
+        <pins pinNr="10"/>
+      </pinGroups>
+    </components>
     <connections src="//@systemStructures.0/@components.0/@pinGroups.0/@pins.1" target="//@systemStructures.0/@board/@pinGroups.0/@pins.1"/>
     <connections src="//@systemStructures.0/@components.0/@pinGroups.0/@pins.0" target="//@systemStructures.0/@board/@pinGroups.0/@pins.0"/>
   </systemStructures>
