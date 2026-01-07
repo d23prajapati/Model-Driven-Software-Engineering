@@ -20,12 +20,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemBehavior">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviors" upperBound="-1"
+        eType="#//Behavior" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Board">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pinGroups" upperBound="-1"
         eType="#//PinGroup" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serialSpeed" defaultValueLiteral="1100"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -60,5 +61,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Connection">
     <eStructuralFeatures xsi:type="ecore:EReference" name="src" eType="#//Pin"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Pin"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpaqueBehavior" eSuperTypes="#//Behavior">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commandLine" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMain" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
 </ecore:EPackage>

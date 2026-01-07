@@ -4,7 +4,7 @@
     <semanticResources>MyFirst.embeddedsystem</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_0gVAkMONEfCM2JZwUzrpfA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_4Cs7IMONEfCM2JZwUzrpfA" name="new SystemStructureDiagram" repPath="#_4CW84MONEfCM2JZwUzrpfA" changeId="1764613275335">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_4Cs7IMONEfCM2JZwUzrpfA" name="new SystemStructureDiagram" repPath="#_4CW84MONEfCM2JZwUzrpfA" changeId="1767707235168">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']"/>
         <target xmi:type="embeddedSystem:SystemStructure" href="MyFirst.embeddedsystem#//@systemStructures.0"/>
       </ownedRepresentationDescriptors>
@@ -128,8 +128,41 @@
               <styles xmi:type="notation:ShapeStyle" xmi:id="_8oOGA8OTEfCM2JZwUzrpfA" fontName="Segoe UI" fontHeight="12"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8oOGBMOTEfCM2JZwUzrpfA" x="-22" width="30" height="30"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_0FBoMOrrEfCJwpIba834bA" type="3001" element="_0E66hOrrEfCJwpIba834bA">
+              <children xmi:type="notation:Node" xmi:id="_0FCPQOrrEfCJwpIba834bA" type="5001">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_0FCPQerrEfCJwpIba834bA" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_0FErgOrrEfCJwpIba834bA" type="3002" element="_0E7hkOrrEfCJwpIba834bA">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_0FErgerrEfCJwpIba834bA" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0FErgurrEfCJwpIba834bA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_0FBoMerrEfCJwpIba834bA" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0FBoMurrEfCJwpIba834bA" x="53" width="30" height="30"/>
+            </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_8oMQ0cOTEfCM2JZwUzrpfA" fontName="Segoe UI" fontHeight="12"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8oMQ0sOTEfCM2JZwUzrpfA" x="60" y="-22" width="61" height="30"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hz_GIOrsEfCJwpIba834bA" type="3001" element="_Hz5mkOrsEfCJwpIba834bA">
+            <children xmi:type="notation:Node" xmi:id="_Hz_tMOrsEfCJwpIba834bA" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Hz_tMersEfCJwpIba834bA" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_H0AUQOrsEfCJwpIba834bA" type="3003" element="_Hz5mkersEfCJwpIba834bA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_H0AUQersEfCJwpIba834bA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H0AUQursEfCJwpIba834bA"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_H0A7UOrsEfCJwpIba834bA" type="3001" element="_Hz6NoOrsEfCJwpIba834bA">
+              <children xmi:type="notation:Node" xmi:id="_H0A7U-rsEfCJwpIba834bA" type="5001">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_H0A7VOrsEfCJwpIba834bA" y="5"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_H0BiYOrsEfCJwpIba834bA" type="3002" element="_Hz6NoersEfCJwpIba834bA">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_H0BiYersEfCJwpIba834bA" fontName="Segoe UI"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H0BiYursEfCJwpIba834bA"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_H0A7UersEfCJwpIba834bA" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H0A7UursEfCJwpIba834bA" x="22" width="30" height="30"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Hz_GIersEfCJwpIba834bA" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hz_GIursEfCJwpIba834bA" x="175" y="-22" width="30" height="30"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_h9qPQcOQEfCM2JZwUzrpfA" fontName="Segoe UI" fontHeight="12"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h9qPQsOQEfCM2JZwUzrpfA" x="55" y="205" width="236" height="176"/>
@@ -234,7 +267,7 @@
       <ownedBorderedNodes xmi:type="diagram:DNode" uid="_8nbb0sOTEfCM2JZwUzrpfA" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="embeddedSystem:PinGroup" href="MyFirst.embeddedsystem#//@systemStructures.0/@board/@pinGroups.0"/>
         <semanticElements xmi:type="embeddedSystem:PinGroup" href="MyFirst.embeddedsystem#//@systemStructures.0/@board/@pinGroups.0"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_8ncC4cOTEfCM2JZwUzrpfA" name="0" incomingEdges="_VUTlCMkVEfCF3K8mxhVxeQ" width="3" height="3" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_8ncC4cOTEfCM2JZwUzrpfA" name="LED" incomingEdges="_VUTlCMkVEfCF3K8mxhVxeQ" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="embeddedSystem:Pin" href="MyFirst.embeddedsystem#//@systemStructures.0/@board/@pinGroups.0/@pins.0"/>
           <semanticElements xmi:type="embeddedSystem:Pin" href="MyFirst.embeddedsystem#//@systemStructures.0/@board/@pinGroups.0/@pins.0"/>
           <ownedStyle xmi:type="diagram:Dot" uid="_8ncp8MOTEfCM2JZwUzrpfA" labelSize="12" showIcon="false" labelPosition="node" backgroundColor="239,41,41">
@@ -250,7 +283,31 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']/@borderedNodeMappings[name='PinBoardNode']"/>
         </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_0E66hOrrEfCJwpIba834bA" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="embeddedSystem:Pin" href="MyFirst.embeddedsystem#//@systemStructures.0/@board/@pinGroups.0/@pins.2"/>
+          <semanticElements xmi:type="embeddedSystem:Pin" href="MyFirst.embeddedsystem#//@systemStructures.0/@board/@pinGroups.0/@pins.2"/>
+          <ownedStyle xmi:type="diagram:Dot" uid="_0E7hkOrrEfCJwpIba834bA" labelSize="12" showIcon="false" labelPosition="node" backgroundColor="239,41,41">
+            <description xmi:type="style:DotDescription" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']/@borderedNodeMappings[name='PinBoardNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']/@borderedNodeMappings[name='PinBoardNode']"/>
+        </ownedBorderedNodes>
         <ownedStyle xmi:type="diagram:Square" uid="_8nbb08OTEfCM2JZwUzrpfA" labelSize="12" showIcon="false" labelPosition="node">
+          <description xmi:type="style:SquareDescription" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_Hz5mkOrsEfCJwpIba834bA" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="embeddedSystem:PinGroup" href="MyFirst.embeddedsystem#//@systemStructures.0/@board/@pinGroups.1"/>
+        <semanticElements xmi:type="embeddedSystem:PinGroup" href="MyFirst.embeddedsystem#//@systemStructures.0/@board/@pinGroups.1"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_Hz6NoOrsEfCJwpIba834bA" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="embeddedSystem:Pin" href="MyFirst.embeddedsystem#//@systemStructures.0/@board/@pinGroups.1/@pins.0"/>
+          <semanticElements xmi:type="embeddedSystem:Pin" href="MyFirst.embeddedsystem#//@systemStructures.0/@board/@pinGroups.1/@pins.0"/>
+          <ownedStyle xmi:type="diagram:Dot" uid="_Hz6NoersEfCJwpIba834bA" labelSize="12" showIcon="false" labelPosition="node" backgroundColor="239,41,41">
+            <description xmi:type="style:DotDescription" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']/@borderedNodeMappings[name='PinBoardNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']/@borderedNodeMappings[name='PinBoardNode']"/>
+        </ownedBorderedNodes>
+        <ownedStyle xmi:type="diagram:Square" uid="_Hz5mkersEfCJwpIba834bA" labelSize="12" showIcon="false" labelPosition="node">
           <description xmi:type="style:SquareDescription" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/embeddedSystem.project.design/description/project.odesign#//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']/@borderedNodeMappings[name='PinGroupBorderedNode']"/>

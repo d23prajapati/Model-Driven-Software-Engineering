@@ -107,6 +107,16 @@ public class EmbeddedSystemAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseBehavior(Behavior object) {
+			return createBehaviorAdapter();
+		}
+
+		@Override
+		public Adapter caseOpaqueBehavior(OpaqueBehavior object) {
+			return createOpaqueBehaviorAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -234,6 +244,34 @@ public class EmbeddedSystemAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConnectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link embeddedSystem.Behavior <em>Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see embeddedSystem.Behavior
+	 * @generated
+	 */
+	public Adapter createBehaviorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link embeddedSystem.OpaqueBehavior <em>Opaque Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see embeddedSystem.OpaqueBehavior
+	 * @generated
+	 */
+	public Adapter createOpaqueBehaviorAdapter() {
 		return null;
 	}
 

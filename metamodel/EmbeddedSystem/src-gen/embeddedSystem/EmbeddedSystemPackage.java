@@ -196,13 +196,22 @@ public interface EmbeddedSystemPackage extends EPackage {
 	int SYSTEM_BEHAVIOR__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Behaviors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_BEHAVIOR__BEHAVIORS = 1;
+
+	/**
 	 * The number of structural features of the '<em>System Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_BEHAVIOR_FEATURE_COUNT = 1;
+	int SYSTEM_BEHAVIOR_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>System Behavior</em>' class.
@@ -453,6 +462,98 @@ public interface EmbeddedSystemPackage extends EPackage {
 	int CONNECTION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link embeddedSystem.impl.BehaviorImpl <em>Behavior</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see embeddedSystem.impl.BehaviorImpl
+	 * @see embeddedSystem.impl.EmbeddedSystemPackageImpl#getBehavior()
+	 * @generated
+	 */
+	int BEHAVIOR = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link embeddedSystem.impl.OpaqueBehaviorImpl <em>Opaque Behavior</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see embeddedSystem.impl.OpaqueBehaviorImpl
+	 * @see embeddedSystem.impl.EmbeddedSystemPackageImpl#getOpaqueBehavior()
+	 * @generated
+	 */
+	int OPAQUE_BEHAVIOR = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_BEHAVIOR__NAME = BEHAVIOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Command Line</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_BEHAVIOR__COMMAND_LINE = BEHAVIOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Is Main</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_BEHAVIOR__IS_MAIN = BEHAVIOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Opaque Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_BEHAVIOR_FEATURE_COUNT = BEHAVIOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Opaque Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPAQUE_BEHAVIOR_OPERATION_COUNT = BEHAVIOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link embeddedSystem.ComponentType <em>Component Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -460,7 +561,7 @@ public interface EmbeddedSystemPackage extends EPackage {
 	 * @see embeddedSystem.impl.EmbeddedSystemPackageImpl#getComponentType()
 	 * @generated
 	 */
-	int COMPONENT_TYPE = 8;
+	int COMPONENT_TYPE = 10;
 
 	/**
 	 * The meta object id for the '{@link embeddedSystem.PinType <em>Pin Type</em>}' enum.
@@ -470,7 +571,7 @@ public interface EmbeddedSystemPackage extends EPackage {
 	 * @see embeddedSystem.impl.EmbeddedSystemPackageImpl#getPinType()
 	 * @generated
 	 */
-	int PIN_TYPE = 9;
+	int PIN_TYPE = 11;
 
 	/**
 	 * Returns the meta object for class '{@link embeddedSystem.SystemModel <em>System Model</em>}'.
@@ -589,6 +690,17 @@ public interface EmbeddedSystemPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSystemBehavior_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link embeddedSystem.SystemBehavior#getBehaviors <em>Behaviors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Behaviors</em>'.
+	 * @see embeddedSystem.SystemBehavior#getBehaviors()
+	 * @see #getSystemBehavior()
+	 * @generated
+	 */
+	EReference getSystemBehavior_Behaviors();
 
 	/**
 	 * Returns the meta object for class '{@link embeddedSystem.Board <em>Board</em>}'.
@@ -762,6 +874,59 @@ public interface EmbeddedSystemPackage extends EPackage {
 	EReference getConnection_Target();
 
 	/**
+	 * Returns the meta object for class '{@link embeddedSystem.Behavior <em>Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Behavior</em>'.
+	 * @see embeddedSystem.Behavior
+	 * @generated
+	 */
+	EClass getBehavior();
+
+	/**
+	 * Returns the meta object for the attribute '{@link embeddedSystem.Behavior#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see embeddedSystem.Behavior#getName()
+	 * @see #getBehavior()
+	 * @generated
+	 */
+	EAttribute getBehavior_Name();
+
+	/**
+	 * Returns the meta object for class '{@link embeddedSystem.OpaqueBehavior <em>Opaque Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Opaque Behavior</em>'.
+	 * @see embeddedSystem.OpaqueBehavior
+	 * @generated
+	 */
+	EClass getOpaqueBehavior();
+
+	/**
+	 * Returns the meta object for the attribute '{@link embeddedSystem.OpaqueBehavior#getCommandLine <em>Command Line</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Command Line</em>'.
+	 * @see embeddedSystem.OpaqueBehavior#getCommandLine()
+	 * @see #getOpaqueBehavior()
+	 * @generated
+	 */
+	EAttribute getOpaqueBehavior_CommandLine();
+
+	/**
+	 * Returns the meta object for the attribute '{@link embeddedSystem.OpaqueBehavior#isIsMain <em>Is Main</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Main</em>'.
+	 * @see embeddedSystem.OpaqueBehavior#isIsMain()
+	 * @see #getOpaqueBehavior()
+	 * @generated
+	 */
+	EAttribute getOpaqueBehavior_IsMain();
+
+	/**
 	 * Returns the meta object for enum '{@link embeddedSystem.ComponentType <em>Component Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -897,6 +1062,14 @@ public interface EmbeddedSystemPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SYSTEM_BEHAVIOR__NAME = eINSTANCE.getSystemBehavior_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Behaviors</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM_BEHAVIOR__BEHAVIORS = eINSTANCE.getSystemBehavior_Behaviors();
 
 		/**
 		 * The meta object literal for the '{@link embeddedSystem.impl.BoardImpl <em>Board</em>}' class.
@@ -1035,6 +1208,50 @@ public interface EmbeddedSystemPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONNECTION__TARGET = eINSTANCE.getConnection_Target();
+
+		/**
+		 * The meta object literal for the '{@link embeddedSystem.impl.BehaviorImpl <em>Behavior</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see embeddedSystem.impl.BehaviorImpl
+		 * @see embeddedSystem.impl.EmbeddedSystemPackageImpl#getBehavior()
+		 * @generated
+		 */
+		EClass BEHAVIOR = eINSTANCE.getBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BEHAVIOR__NAME = eINSTANCE.getBehavior_Name();
+
+		/**
+		 * The meta object literal for the '{@link embeddedSystem.impl.OpaqueBehaviorImpl <em>Opaque Behavior</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see embeddedSystem.impl.OpaqueBehaviorImpl
+		 * @see embeddedSystem.impl.EmbeddedSystemPackageImpl#getOpaqueBehavior()
+		 * @generated
+		 */
+		EClass OPAQUE_BEHAVIOR = eINSTANCE.getOpaqueBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Command Line</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPAQUE_BEHAVIOR__COMMAND_LINE = eINSTANCE.getOpaqueBehavior_CommandLine();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Main</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPAQUE_BEHAVIOR__IS_MAIN = eINSTANCE.getOpaqueBehavior_IsMain();
 
 		/**
 		 * The meta object literal for the '{@link embeddedSystem.ComponentType <em>Component Type</em>}' enum.

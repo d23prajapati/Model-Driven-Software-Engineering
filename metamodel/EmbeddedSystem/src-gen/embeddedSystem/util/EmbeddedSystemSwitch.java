@@ -122,6 +122,22 @@ public class EmbeddedSystemSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case EmbeddedSystemPackage.BEHAVIOR: {
+			Behavior behavior = (Behavior) theEObject;
+			T result = caseBehavior(behavior);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case EmbeddedSystemPackage.OPAQUE_BEHAVIOR: {
+			OpaqueBehavior opaqueBehavior = (OpaqueBehavior) theEObject;
+			T result = caseOpaqueBehavior(opaqueBehavior);
+			if (result == null)
+				result = caseBehavior(opaqueBehavior);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -244,6 +260,36 @@ public class EmbeddedSystemSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnection(Connection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavior</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBehavior(Behavior object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Opaque Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Opaque Behavior</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOpaqueBehavior(OpaqueBehavior object) {
 		return null;
 	}
 

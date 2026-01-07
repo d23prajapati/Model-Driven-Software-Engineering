@@ -2,12 +2,14 @@
  */
 package embeddedSystem.impl;
 
+import embeddedSystem.Behavior;
 import embeddedSystem.Board;
 import embeddedSystem.Component;
 import embeddedSystem.ComponentType;
 import embeddedSystem.Connection;
 import embeddedSystem.EmbeddedSystemFactory;
 import embeddedSystem.EmbeddedSystemPackage;
+import embeddedSystem.OpaqueBehavior;
 import embeddedSystem.Pin;
 import embeddedSystem.PinGroup;
 import embeddedSystem.PinType;
@@ -85,6 +87,20 @@ public class EmbeddedSystemPackageImpl extends EPackageImpl implements EmbeddedS
 	 * @generated
 	 */
 	private EClass connectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass behaviorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass opaqueBehaviorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,6 +296,16 @@ public class EmbeddedSystemPackageImpl extends EPackageImpl implements EmbeddedS
 	 * @generated
 	 */
 	@Override
+	public EReference getSystemBehavior_Behaviors() {
+		return (EReference) systemBehaviorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getBoard() {
 		return boardEClass;
 	}
@@ -440,6 +466,56 @@ public class EmbeddedSystemPackageImpl extends EPackageImpl implements EmbeddedS
 	 * @generated
 	 */
 	@Override
+	public EClass getBehavior() {
+		return behaviorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getBehavior_Name() {
+		return (EAttribute) behaviorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getOpaqueBehavior() {
+		return opaqueBehaviorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getOpaqueBehavior_CommandLine() {
+		return (EAttribute) opaqueBehaviorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getOpaqueBehavior_IsMain() {
+		return (EAttribute) opaqueBehaviorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getComponentType() {
 		return componentTypeEEnum;
 	}
@@ -497,6 +573,7 @@ public class EmbeddedSystemPackageImpl extends EPackageImpl implements EmbeddedS
 
 		systemBehaviorEClass = createEClass(SYSTEM_BEHAVIOR);
 		createEAttribute(systemBehaviorEClass, SYSTEM_BEHAVIOR__NAME);
+		createEReference(systemBehaviorEClass, SYSTEM_BEHAVIOR__BEHAVIORS);
 
 		boardEClass = createEClass(BOARD);
 		createEAttribute(boardEClass, BOARD__NAME);
@@ -518,6 +595,13 @@ public class EmbeddedSystemPackageImpl extends EPackageImpl implements EmbeddedS
 		connectionEClass = createEClass(CONNECTION);
 		createEReference(connectionEClass, CONNECTION__SRC);
 		createEReference(connectionEClass, CONNECTION__TARGET);
+
+		behaviorEClass = createEClass(BEHAVIOR);
+		createEAttribute(behaviorEClass, BEHAVIOR__NAME);
+
+		opaqueBehaviorEClass = createEClass(OPAQUE_BEHAVIOR);
+		createEAttribute(opaqueBehaviorEClass, OPAQUE_BEHAVIOR__COMMAND_LINE);
+		createEAttribute(opaqueBehaviorEClass, OPAQUE_BEHAVIOR__IS_MAIN);
 
 		// Create enums
 		componentTypeEEnum = createEEnum(COMPONENT_TYPE);
@@ -553,6 +637,7 @@ public class EmbeddedSystemPackageImpl extends EPackageImpl implements EmbeddedS
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		opaqueBehaviorEClass.getESuperTypes().add(this.getBehavior());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(systemModelEClass, SystemModel.class, "SystemModel", !IS_ABSTRACT, !IS_INTERFACE,
@@ -584,6 +669,9 @@ public class EmbeddedSystemPackageImpl extends EPackageImpl implements EmbeddedS
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSystemBehavior_Name(), ecorePackage.getEString(), "name", null, 0, 1, SystemBehavior.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystemBehavior_Behaviors(), this.getBehavior(), null, "behaviors", null, 0, -1,
+				SystemBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(boardEClass, Board.class, "Board", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBoard_Name(), ecorePackage.getEString(), "name", null, 0, 1, Board.class, !IS_TRANSIENT,
@@ -624,6 +712,19 @@ public class EmbeddedSystemPackageImpl extends EPackageImpl implements EmbeddedS
 		initEReference(getConnection_Target(), this.getPin(), null, "target", null, 0, 1, Connection.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(behaviorEClass, Behavior.class, "Behavior", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBehavior_Name(), ecorePackage.getEString(), "name", null, 0, 1, Behavior.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(opaqueBehaviorEClass, OpaqueBehavior.class, "OpaqueBehavior", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOpaqueBehavior_CommandLine(), ecorePackage.getEString(), "commandLine", null, 0, 1,
+				OpaqueBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOpaqueBehavior_IsMain(), ecorePackage.getEBoolean(), "isMain", null, 0, 1,
+				OpaqueBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(componentTypeEEnum, ComponentType.class, "ComponentType");

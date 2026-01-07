@@ -3,8 +3,12 @@
   <systemStructures name="MySystem">
     <board name="AurduinoUno3">
       <pinGroups>
-        <pins name="0"/>
+        <pins pinNr="13" name="LED"/>
         <pins pinNr="1" name="1" type="VCC"/>
+        <pins/>
+      </pinGroups>
+      <pinGroups>
+        <pins pinNr="10"/>
       </pinGroups>
     </board>
     <components name="LED">

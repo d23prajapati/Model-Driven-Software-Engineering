@@ -53,6 +53,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <containerMappings name="mySystemBehavior" semanticCandidatesExpression="aql:" domainClass="embeddedSystem::Behavior"/>
         <toolSections name="embeddedSystemTools">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Component" nodeMappings="//@ownedViewpoints[name='EmbeddedSystemViewpoint']/@ownedRepresentations[name='SystemStructureDiagram']/@defaultLayer/@nodeMappings[name='ComponentNode']">
             <variable name="container"/>
@@ -137,7 +138,7 @@
       <pages name="ComponentPage" labelExpression="Component Setup" domainClass="embeddedSystem::Component" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2">
         <validationSet>
           <semanticValidationRules name="NameCheck" level="ERROR" message="Empty Name" targetClass="embeddedSystem::Component">
-            <audits auditExpression="aql:self.name.size()>0"/>
+            <audits auditExpression="aql:self.oclAsType(embeddedSystem::Component).name.size() > 0"/>
           </semanticValidationRules>
         </validationSet>
       </pages>

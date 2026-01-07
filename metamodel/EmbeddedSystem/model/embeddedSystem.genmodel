@@ -37,11 +37,11 @@
     </genClasses>
     <genClasses ecoreClass="embeddedSystem.ecore#//SystemBehavior">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embeddedSystem.ecore#//SystemBehavior/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference embeddedSystem.ecore#//SystemBehavior/behaviors"/>
     </genClasses>
     <genClasses ecoreClass="embeddedSystem.ecore#//Board">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embeddedSystem.ecore#//Board/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference embeddedSystem.ecore#//Board/pinGroups"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embeddedSystem.ecore#//Board/serialSpeed"/>
     </genClasses>
     <genClasses ecoreClass="embeddedSystem.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embeddedSystem.ecore#//Component/name"/>
@@ -59,6 +59,13 @@
     <genClasses ecoreClass="embeddedSystem.ecore#//Connection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference embeddedSystem.ecore#//Connection/src"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference embeddedSystem.ecore#//Connection/target"/>
+    </genClasses>
+    <genClasses ecoreClass="embeddedSystem.ecore#//Behavior">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embeddedSystem.ecore#//Behavior/name"/>
+    </genClasses>
+    <genClasses ecoreClass="embeddedSystem.ecore#//OpaqueBehavior">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embeddedSystem.ecore#//OpaqueBehavior/commandLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute embeddedSystem.ecore#//OpaqueBehavior/isMain"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

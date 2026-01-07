@@ -257,6 +257,29 @@ public class EmbeddedSystemItemProviderAdapterFactory extends EmbeddedSystemAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link embeddedSystem.OpaqueBehavior} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OpaqueBehaviorItemProvider opaqueBehaviorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link embeddedSystem.OpaqueBehavior}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOpaqueBehaviorAdapter() {
+		if (opaqueBehaviorItemProvider == null) {
+			opaqueBehaviorItemProvider = new OpaqueBehaviorItemProvider(this);
+		}
+
+		return opaqueBehaviorItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -377,6 +400,8 @@ public class EmbeddedSystemItemProviderAdapterFactory extends EmbeddedSystemAdap
 			pinItemProvider.dispose();
 		if (connectionItemProvider != null)
 			connectionItemProvider.dispose();
+		if (opaqueBehaviorItemProvider != null)
+			opaqueBehaviorItemProvider.dispose();
 	}
 
 }

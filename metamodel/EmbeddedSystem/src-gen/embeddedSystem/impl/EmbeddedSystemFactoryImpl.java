@@ -73,6 +73,8 @@ public class EmbeddedSystemFactoryImpl extends EFactoryImpl implements EmbeddedS
 			return createPin();
 		case EmbeddedSystemPackage.CONNECTION:
 			return createConnection();
+		case EmbeddedSystemPackage.OPAQUE_BEHAVIOR:
+			return createOpaqueBehavior();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -198,6 +200,17 @@ public class EmbeddedSystemFactoryImpl extends EFactoryImpl implements EmbeddedS
 	public Connection createConnection() {
 		ConnectionImpl connection = new ConnectionImpl();
 		return connection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public OpaqueBehavior createOpaqueBehavior() {
+		OpaqueBehaviorImpl opaqueBehavior = new OpaqueBehaviorImpl();
+		return opaqueBehavior;
 	}
 
 	/**

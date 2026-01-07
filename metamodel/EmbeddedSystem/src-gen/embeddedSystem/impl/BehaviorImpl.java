@@ -4,39 +4,28 @@ package embeddedSystem.impl;
 
 import embeddedSystem.Behavior;
 import embeddedSystem.EmbeddedSystemPackage;
-import embeddedSystem.SystemBehavior;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>System Behavior</b></em>'.
+ * An implementation of the model object '<em><b>Behavior</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link embeddedSystem.impl.SystemBehaviorImpl#getName <em>Name</em>}</li>
- *   <li>{@link embeddedSystem.impl.SystemBehaviorImpl#getBehaviors <em>Behaviors</em>}</li>
+ *   <li>{@link embeddedSystem.impl.BehaviorImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SystemBehaviorImpl extends MinimalEObjectImpl.Container implements SystemBehavior {
+public abstract class BehaviorImpl extends MinimalEObjectImpl.Container implements Behavior {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,21 +47,11 @@ public class SystemBehaviorImpl extends MinimalEObjectImpl.Container implements 
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBehaviors() <em>Behaviors</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehaviors()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Behavior> behaviors;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SystemBehaviorImpl() {
+	protected BehaviorImpl() {
 		super();
 	}
 
@@ -83,7 +62,7 @@ public class SystemBehaviorImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return EmbeddedSystemPackage.Literals.SYSTEM_BEHAVIOR;
+		return EmbeddedSystemPackage.Literals.BEHAVIOR;
 	}
 
 	/**
@@ -106,36 +85,7 @@ public class SystemBehaviorImpl extends MinimalEObjectImpl.Container implements 
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EmbeddedSystemPackage.SYSTEM_BEHAVIOR__NAME, oldName,
-					name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Behavior> getBehaviors() {
-		if (behaviors == null) {
-			behaviors = new EObjectContainmentEList<Behavior>(Behavior.class, this,
-					EmbeddedSystemPackage.SYSTEM_BEHAVIOR__BEHAVIORS);
-		}
-		return behaviors;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case EmbeddedSystemPackage.SYSTEM_BEHAVIOR__BEHAVIORS:
-			return ((InternalEList<?>) getBehaviors()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+			eNotify(new ENotificationImpl(this, Notification.SET, EmbeddedSystemPackage.BEHAVIOR__NAME, oldName, name));
 	}
 
 	/**
@@ -146,10 +96,8 @@ public class SystemBehaviorImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case EmbeddedSystemPackage.SYSTEM_BEHAVIOR__NAME:
+		case EmbeddedSystemPackage.BEHAVIOR__NAME:
 			return getName();
-		case EmbeddedSystemPackage.SYSTEM_BEHAVIOR__BEHAVIORS:
-			return getBehaviors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,16 +107,11 @@ public class SystemBehaviorImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case EmbeddedSystemPackage.SYSTEM_BEHAVIOR__NAME:
+		case EmbeddedSystemPackage.BEHAVIOR__NAME:
 			setName((String) newValue);
-			return;
-		case EmbeddedSystemPackage.SYSTEM_BEHAVIOR__BEHAVIORS:
-			getBehaviors().clear();
-			getBehaviors().addAll((Collection<? extends Behavior>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,11 +125,8 @@ public class SystemBehaviorImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case EmbeddedSystemPackage.SYSTEM_BEHAVIOR__NAME:
+		case EmbeddedSystemPackage.BEHAVIOR__NAME:
 			setName(NAME_EDEFAULT);
-			return;
-		case EmbeddedSystemPackage.SYSTEM_BEHAVIOR__BEHAVIORS:
-			getBehaviors().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -200,10 +140,8 @@ public class SystemBehaviorImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case EmbeddedSystemPackage.SYSTEM_BEHAVIOR__NAME:
+		case EmbeddedSystemPackage.BEHAVIOR__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case EmbeddedSystemPackage.SYSTEM_BEHAVIOR__BEHAVIORS:
-			return behaviors != null && !behaviors.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -225,4 +163,4 @@ public class SystemBehaviorImpl extends MinimalEObjectImpl.Container implements 
 		return result.toString();
 	}
 
-} //SystemBehaviorImpl
+} //BehaviorImpl

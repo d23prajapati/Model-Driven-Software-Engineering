@@ -2,6 +2,8 @@
  */
 package embeddedSystem;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link embeddedSystem.SystemBehavior#getName <em>Name</em>}</li>
+ *   <li>{@link embeddedSystem.SystemBehavior#getBehaviors <em>Behaviors</em>}</li>
  * </ul>
  *
  * @see embeddedSystem.EmbeddedSystemPackage#getSystemBehavior()
@@ -42,5 +45,17 @@ public interface SystemBehavior extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Behaviors</b></em>' containment reference list.
+	 * The list contents are of type {@link embeddedSystem.Behavior}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Behaviors</em>' containment reference list.
+	 * @see embeddedSystem.EmbeddedSystemPackage#getSystemBehavior_Behaviors()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Behavior> getBehaviors();
 
 } // SystemBehavior
